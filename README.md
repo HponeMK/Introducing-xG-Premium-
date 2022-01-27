@@ -2,7 +2,7 @@
 DBA5106 Term Project. Improving on publicly available non-Penalty Expected Goals (npxG) data. But for brevity, xG is used throughout
 
 #### Techniques Employed
-EDA, Feature Engineering, Imbalanced Dataset, Hyper-parameter tuning (GridSearc, RandomSearch), Running & Evaluating Models (ROC-AUC) and Comparing metrics <br>
+EDA, Feature Engineering, Imbalanced Dataset, Hyper-parameter tuning (GridSearch, RandomSearch), Running & Evaluating Models (ROC-AUC) and Comparing metrics <br>
 
 ### Context
 Football teams have been trying to find ways to score more goals in each game to win and to achieve better results in each season of their respective leagues. Traditionally, football teams have used past goals, shots, and shots on target to evaluate the goal-scoring ability of a player. However, recent trends show that more teams are using data analytics to find scientific approaches to evaluate a threatening player more objectively. Expected Goals (xG) measures the quality of goal-scoring chances by calculating the probability of scoring a goal from a given shot. This metric is not only
@@ -26,11 +26,18 @@ The following models were utilised in training and their metrics compared:
 * Support Vector Machine (SVM)<br>
 
 Top 3 performing models were:
-* Random Forests
-* SVM
-* Logistic Regression
+* Random Forests (AUC = 0.782)
+* SVM (AUC = 0.780)
+* Logistic Regression (AUC = 0.774)
+
+*StatsBomb - industry leading biggest football analytics company (AUC= 0.810)* \*[see limitations]
 
 For Business use, we recommended logistic regression. The (slight) drop in accuracy & AUC score is offset by its greater interpretability vs Random Forests and not being as computationally expensive as SVM
+
+### Limitations
+One limitation is that the specialised and extensive datasets that could more accurately model the xG is typically owned and kept secret by specialised companies in the field and understandably so given the potential benefits. Whilst we benefited from the dataset from StatsBomb, the data is not as comprehensive given that it is an open dataset (the full dataset is utilised by the company to help provide analytics for real football clubs with StatsBomb being arguably the biggest football analytics company). 
+
+With that in mind however, our feature engineered data together with the other features combined to be within 3.5% of their model which is a remarkable achievement,
 
 ### Credits 
 Sae Jin's xG-Model-World-Cup-2018 (https://github.com/saejin123/xG-Model-World-Cup-2018) <br>
